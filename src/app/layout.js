@@ -1,32 +1,29 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar';
 
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const ubuntu = Ubuntu({
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-ubuntu',
 });
 
 export const metadata = {
-  title: 'QuickWash',
+  title: 'QuickWash - Professional Car Wash & Detailing Services',
   description:
-    'QuickWash provides top-quality car wash and detailing services in Dhaka. Book online and keep your car spotless.',
+    'QuickWash provides top-quality car wash and detailing services in Dhaka. Book online and keep your car spotless with our professional, eco-friendly cleaning solutions.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ubuntu.variable} font-ubuntu antialiased`}
       >
         <Navbar />
-        {children}
+        <main className="relative">
+          {children}
+        </main>
       </body>
     </html>
   );
